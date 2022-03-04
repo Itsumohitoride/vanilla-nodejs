@@ -1,5 +1,3 @@
-// controller.js
-// Logic behind the functionalities
 const data = require("./data");
 
 class Controller {
@@ -11,15 +9,15 @@ class Controller {
 
     // getting a single todo
     async getTodo(id) {
-        return new Promise((resolve, rejects) => {
+        return new Promise((resolve, reject) => {
             // get the todo
             let todo = data.find((todo) => todo.id === parseInt(id));
-            if(todo) {
+            if (todo) {
                 // return the todo
                 resolve(todo);
-            }else {
+            } else {
                 // return an error
-                rejects(`Todo with id ${id} not found`);
+                reject(`Todo with id ${id} not found `);
             }
         });
     }
@@ -33,39 +31,40 @@ class Controller {
                 ...todo,
             };
 
-            //return the new created todo
+            // return the new created todo
             resolve(newTodo);
         });
     }
 
+    // updating a todo
     async updateTodo(id) {
         return new Promise((resolve, reject) => {
             // get the todo.
             let todo = data.find((todo) => todo.id === parseInt(id));
-            // if no todo, resturn an error
-            if(!todo) {
+            // if no todo, return an error
+            if (!todo) {
                 reject(`No todo with id ${id} found`);
             }
-            // else, update it by setting completed to true
+            //else, update it by setting completed to true
             todo["completed"] = true;
-            // return the update todo
+            // return the updated todo
             resolve(todo);
         });
     }
 
+    // deleting a todo
     async deleteTodo(id) {
         return new Promise((resolve, reject) => {
             // get the todo
             let todo = data.find((todo) => todo.id === parseInt(id));
             // if no todo, return an error
-            if(!todo) {
+            if (!todo) {
                 reject(`No todo with id ${id} found`);
             }
             // else, return a success message
-            resolve(`Todo delted successfully`);
+            resolve(`Todo deleted successfully`);
         });
     }
 }
 
 module.exports = Controller;
-

@@ -1,29 +1,27 @@
-//data.js
-/**Todos List */
 const todos = [
     {
         id: 1,
-        tittle: "Coding in Javascript",
+        title: "Coding in Javascript",
         description: "Working with functions in JavaScript",
-        complete: false,
+        completed: false,
     },
     {
         id: 2,
-        tittle: "Cooking Supper",
+        title: "Cooking Supper",
         description: "Preparing rice and chicken",
-        complete: false,
+        completed: false,
     },
     {
         id: 3,
-        tittle: "Taking a walk",
+        title: "Taking a walk",
         description: "Easy time at the park",
-        complete: false,
+        completed: false,
     },
     {
         id: 4,
-        tittle: "Watching Netflix",
+        title: "Watching Netflix",
         description: "Enjoying the new premiered series",
-        complete: false,
+        completed: false,
     },
 ];
 

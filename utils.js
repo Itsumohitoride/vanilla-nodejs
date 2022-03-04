@@ -1,4 +1,3 @@
-//utils.js
 function getReqData(req) {
     return new Promise((resolve, reject) => {
         try {
